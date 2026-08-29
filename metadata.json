@@ -1,0 +1,20 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "divyanshthakurx@gmail.com",
+                "Name": "Divyansh Thakur"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Modern Lenovo Legion Vantage for Plasma 6",
+        "Icon": "preferences-system-power-management",
+        "Id": "org.kde.legionvantage",
+        "License": "GPL-3.0+",
+        "Name": "Legion Vantage",
+        "Version": "1.0.0",
+        "Website": "https://github.com/divyanshthakurx/plasma-legion-vantage"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
