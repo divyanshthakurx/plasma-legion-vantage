@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.16)
-
 project(plasma-legion-vantage VERSION 1.0.0)
 
 find_package(ECM 6.0.0 REQUIRED NO_MODULE)
@@ -9,8 +8,8 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
-# Install Plasmoid UI Package
+# Install the QML Plasmoid
 plasma_install_package(package org.kde.legionvantage)
 
-# Build C++ Helper Subdirectory
+# Build the C++ Backend Daemon
 add_subdirectory(helper)
