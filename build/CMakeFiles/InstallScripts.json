@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/divyanshthakur/Desktop/projects/legion-vantage/build/cmake_install.cmake",
+		"/home/divyanshthakur/Desktop/projects/legion-vantage/build/helper/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

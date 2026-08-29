@@ -2,16 +2,13 @@
 #include <QDBusConnection>
 #include "legionhelper.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
-
     LegionHelper helper;
     
-    // Register daemon on the session bus
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    dbus.registerObject("/LegionHelper", &helper, QDBusConnection::ExportAllSlots);
-    dbus.registerService("org.kde.legionvantage.helper");
+    dbus.registerObject(QStringLiteral("/LegionHelper"), &helper, QDBusConnection::ExportAllSlots);
+    dbus.registerService(QStringLiteral("org.kde.legionvantage.helper"));
 
     return app.exec();
 }

@@ -1,0 +1,4 @@
+/usr/share/plasma/plasmoids/org.kde.legionvantage/contents/ui/main.qml
+/usr/share/plasma/plasmoids/org.kde.legionvantage/metadata.json
+/usr/lib64/libexec/legion-vantage-helper
+/usr/share/polkit-1/actions/org.kde.legionvantage.policy
