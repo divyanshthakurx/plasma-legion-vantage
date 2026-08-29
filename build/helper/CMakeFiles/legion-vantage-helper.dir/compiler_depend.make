@@ -1587,6 +1587,7 @@ helper/CMakeFiles/legion-vantage-helper.dir/main.cpp.o: /home/divyanshthakur/Des
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QCoreApplication \
+  /usr/include/qt6/QtCore/QDebug \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/q17memory.h \
@@ -1745,6 +1746,8 @@ helper/CMakeFiles/legion-vantage-helper.dir/main.cpp.o: /home/divyanshthakur/Des
 /usr/include/qt6/QtDBus/qdbusconnection.h:
 
 /usr/include/qt6/QtCore/qnativeinterface.h:
+
+/usr/include/qt6/QtCore/qeventloop.h:
 
 /usr/include/qt6/QtCore/QObject:
 
@@ -2356,8 +2359,6 @@ helper/legion-vantage-helper_autogen/moc_predefs.h:
 
 /usr/include/c++/16/bits/requires_hosted.h:
 
-/usr/include/qt6/QtCore/qeventloop.h:
-
 /usr/include/c++/16/bits/shared_ptr_base.h:
 
 /usr/include/bits/stdint-least.h:
@@ -2435,6 +2436,8 @@ helper/legion-vantage-helper_autogen/moc_predefs.h:
 /usr/include/c++/16/cstdlib:
 
 /usr/include/qt6/QtCore/qlatin1stringview.h:
+
+/usr/include/qt6/QtCore/QDebug:
 
 /usr/include/qt6/QtCore/qfunctionaltools_impl.h:
 

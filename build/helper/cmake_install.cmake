@@ -74,6 +74,18 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "plasma-legion-vantage" OR NOT CMAKE_INSTALL
   file(INSTALL DESTINATION "/usr/share/polkit-1/actions" TYPE FILE FILES "/home/divyanshthakur/Desktop/projects/legion-vantage/helper/org.kde.legionvantage.policy")
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "plasma-legion-vantage" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/usr/share/dbus-1/system.d/org.kde.legionvantage.conf")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/usr/share/dbus-1/system.d" TYPE FILE FILES "/home/divyanshthakur/Desktop/projects/legion-vantage/helper/org.kde.legionvantage.conf")
+endif()
+
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)

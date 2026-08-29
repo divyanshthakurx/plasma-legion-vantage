@@ -313,6 +313,6 @@ helper/CMakeFiles/legion-vantage-helper.dir/main.cpp.o: \
  /usr/include/qt6/QtCore/qvarlengtharray.h \
  /usr/include/qt6/QtCore/qalloc.h /usr/include/qt6/QtCore/q23utility.h \
  /usr/include/qt6/QtCore/q20utility.h \
- /usr/include/qt6/QtDBus/qtdbusexports.h \
+ /usr/include/qt6/QtDBus/qtdbusexports.h /usr/include/qt6/QtCore/QDebug \
  /home/divyanshthakur/Desktop/projects/legion-vantage/helper/legionhelper.h \
  /usr/include/qt6/QtCore/QObject /usr/include/qt6/QtCore/QString

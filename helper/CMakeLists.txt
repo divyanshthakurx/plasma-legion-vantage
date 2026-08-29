@@ -11,3 +11,6 @@ install(TARGETS legion-vantage-helper DESTINATION ${KDE_INSTALL_LIBEXECDIR})
 
 # FIX: Install the Polkit permission rule so your widget doesn't ask for a password
 install(FILES org.kde.legionvantage.policy DESTINATION /usr/share/polkit-1/actions/)
+
+# Install the DBus security config
+install(FILES org.kde.legionvantage.conf DESTINATION /usr/share/dbus-1/system.d/)
