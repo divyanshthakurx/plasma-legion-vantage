@@ -1,0 +1,19 @@
+# Lenovo Legion / IdeaPad hardware control — sysfs permissions for the
+# plasma-legion-vantage Plasmoid. Grants the 'plugdev' group write access
+# to specific nodes exposed by the ideapad_acpi / platform_profile drivers.
+#
+# Users must be in the 'plugdev' group (created by default on most distros).
+# The install.sh script handles this automatically.
+#
+# Scope is deliberately narrow: only the files this widget touches.
+
+# --- Battery conservation mode (limits charge to ~60%) ---
+# ideapad_acpi driver, e.g. /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+SUBSYSTEM=="platform", KERNEL=="VPC2004:*", RUN+="/bin/chgrp plugdev %p/conservation_mode", RUN+="/bin/chmod g+w %p/conservation_mode"
+
+# --- ACPI platform profile (balanced / performance / low-power) ---
+SUBSYSTEM=="firmware", KERNEL=="acpi", RUN+="/bin/chgrp plugdev %p/platform_profile", RUN+="/bin/chmod g+w %p/platform_profile"
+SUBSYSTEM=="firmware", KERNEL=="acpi", RUN+="/bin/chgrp plugdev %p/platform_profile_choices", RUN+="/bin/chmod g+rw %p/platform_profile_choices"
+
+# --- ThinkPad fallback (some Lenovo laptop models) ---
+SUBSYSTEM=="platform", KERNEL=="thinkpad_acpi", RUN+="/bin/chgrp plugdev %p/conservation_mode", RUN+="/bin/chmod g+w %p/conservation_mode"

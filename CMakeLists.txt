@@ -8,11 +8,8 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
-# --- FIX: We must import Plasma to use the 'plasma_install_package' macro ---
+# Required for the plasma_install_package() macro
 find_package(Plasma REQUIRED)
 
-# 1. Install the QML Frontend (the 'package' folder)
+# Install the Plasma 6 applet (QML-only; sysfs access via udev-granted permissions)
 plasma_install_package(package org.kde.legionvantage)
-
-# 2. Tell CMake to look inside the 'helper' folder for C++ code
-add_subdirectory(helper)
