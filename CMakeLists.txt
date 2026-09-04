@@ -1,15 +1,28 @@
-cmake_minimum_required(VERSION 3.16)
-project(plasma-legion-vantage VERSION 1.0.0)
+cmake_minimum_required(VERSION 3.19)
 
-# Import KDE Plasma 6 build tools
-find_package(ECM 6.0.0 REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDECompilerSettings NO_POLICY_SCOPE)
-
-# Required for the plasma_install_package() macro
+find_package(Qt6 REQUIRED COMPONENTS Core Qml)
 find_package(Plasma REQUIRED)
+qt_standard_project_setup(REQUIRES 6.5)
 
-# Install the Plasma 6 applet (QML-only; sysfs access via udev-granted permissions)
-plasma_install_package(package org.kde.legionvantage)
+# QML module exposing LegionBackend to Plasma 6.
+# Sources are listed directly so qmltyperegistrations can see the C++ types.
+qt_add_qml_module(legionvantage
+    URI org.kde.legionvantage
+    VERSION 1.0
+    QML_FILES
+        qml/Placeholder.qml
+    SOURCES
+        src/legionbackend.h
+        src/legionbackend.cpp
+)
+
+target_include_directories(legionvantage PRIVATE src)
+
+# Install the QML module plugin alongside the applet package
+install(TARGETS legionvantageplugin
+    LIBRARY DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/legionvantage
+    RUNTIME DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/legionvantage
+)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmldir
+    DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/legionvantage
+)
